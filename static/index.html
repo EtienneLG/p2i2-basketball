@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tableau des Identifiants</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> <!-- Librairie Javascript: jQuery (v3.4.1) -->
+  </head>
+
+  <body>
+
+    <div class="popupBox" id="timerOverlay">30</div>
+
+    <div id="emailOverlay" class="popupBox">
+      <div class="messageBox">
+        <h2>Entrez votre adresse e-mail INSA</h2>
+        <div class="email-wrapper">
+            <input type="text" class="email-input" placeholder="prenom.nom" id="emailInput" required>
+            <span class="email-domain">@insa-lyon.fr</span>
+        </div>
+        <button onclick="validateEmail()">Valider</button>
+        <div id="confirmation"></div>
+      </div>
+    </div>
+
+    <div id="scanOverlay" class="popupBox">
+      <div class="messageBox">
+        <h2>Scannez votre carte étudiante...</h2>
+      </div>
+    </div>
+
+    <div id="attenteOverlay" class="popupBox">
+      <div class="messageBox">
+        <h2>En attente de récupération du score...</h2>
+      </div>
+    </div>
+
+    <div id="finalScoreOverlay" class="popupBox">
+      <div class="messageBox">
+        <h3>Votre score est de</h3>
+        <h1 id="finalScore"><bold>30</bold></h1>
+        <h3>points</h3>
+        <button onclick="document.getElementById('finalScoreOverlay').style.display = 'none';">Ok</button>
+      </div>
+    </div>
+
+    <h1>Tableau des scores</h1>
+
+    <div id="trie-wrapper">
+      <select id="trieParties" onchange="changementTrie();">
+        <option value="toutes-parties">Toutes les parties</option>
+        <option value="mes-parties">Mes parties</option>
+      </select>
+
+      <select id="ordreParties" onchange="changementTrie();">
+        <option value="score">Score</option>
+        <option value="date">Date</option>
+      </select>
+
+      <button id="refresh" onclick="changementTrie()">↻</button>
+    </div>
+
+    <table id="identifiantsTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    
+    <script src="./script.js"></script>
+  </body>
+</html>

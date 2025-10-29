@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding-bottom: 120px;
+}
+
+h1 {
+    color: #333;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 60%;
+    background-color: #fff;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #e0e0e0;
+}
+
+button, select {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#trie-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+}
+
+#refresh {
+    font-size: 1.5em;
+    padding: 0px 10px;
+}
+
+/* Fond semi-transparent qui couvre toute la page */
+.popupBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+
+#timerOverlay {
+    background-color: red;
+    color: white;
+    font-size: 30em;
+}
+
+#emailOverlay, #scanOverlay, #attenteOverlay, #timerOverlay, #finalScoreOverlay {
+    display: none;
+}
+
+#attenteOverlay {
+    z-index: 9998;
+}
+
+#finalScoreOverlay h1, h3 {
+    margin: 0;
+}
+
+#finalScore {
+    font-size: 7em;
+}
+
+/* Boîte de message */
+.messageBox {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 400px;
+}
+
+#emailOverlay input[type="email"] {
+    width: 80%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.email-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.email-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.email-domain {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+}
